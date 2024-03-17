@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTabIIVAxG96e1sS9DtQ2jWFbzF9LWbkB58xS8gYsm2hA&s">
+</head>
+<body>
+    <header>
+        <div class="headercontainer">
+            <h1>Guess The Number Game</h1>
+        </div>
+    </header>
+    
+    <section class="rules">
+        <h2>Game Rules</h2>
+        <ul>
+            <li>Try to guess the number from 1 to 100</li>
+            <li>After every try you will get a little hint about the secret number</li>
+            <li>Type the number then submit the answer</li>
+            <li>Have Fun!</li>
+        </ul>
+    </section>
+
+    <main class="main">
+        <div class="maincontainer">
+            <h2>Please enter a number!</h2>
+        </div>
+
+        <div>
+            <input id="number" type="number">
+            <button id="submit" type="submit">Submit</button>
+        </div>
+
+        
+        <div class="hints">
+            <p id="hintNo1"></p>
+            <p id="hintNo2"></p>
+            <p id="hintNo3"></p>
+            <p id="hintNo4"></p>
+        </div>
+
+        <p id="numberOfTries"></p>
+
+        <p id="result"></p>
+
+        <label id="resetGameLabel" for="resetGame"></label>
+        <button id="resetGame">Restart Game!</button>
+        
+    </main>
+    
+    
+
+    <script src="GuessTheNumberGame.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+body{
+    background-color: rgb(59, 57, 57);
+    color: bisque;
+}
+/* Header */
+.headercontainer h1{
+    display: inline-block;
+    padding: 10px 0px;
+    margin-top: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(88, 78, 63);
+    color: rgb(228, 174, 107);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.headercontainer h1:hover{
+    color: rgb(218, 240, 121);
+}
+.headercontainer{
+    text-align: center;
+}
+/* Header */
+
+/* Rules */
+.rules{
+    border: 4px solid rgb(242, 225, 189);
+    border-radius: 5px;
+    display: block;
+    padding: 5px 10px;
+    color: rgb(228, 174, 107);
+    background-color: rgb(88, 78, 63);
+    float: left;
+}
+.rules h2{
+    font-size: 1.7em;
+    margin-bottom: -5px;
+}
+.rules h2::after{
+    content: "📝";
+}
+.rules li{
+    font-size: 1.1em;
+}
+.rules li:hover{
+    color: hsl(33, 69%, 86%);
+}
+/* Rules */
+
+/* Main */
+.main div{
+    text-align: center;
+}
+.main h2{
+    display: inline-block;
+    border: 3px solid rgb(5, 5, 5);
+    padding: 10px 10px;
+    margin-top: auto;
+    background-color: rgb(106, 106, 106);
+    box-shadow: 2px 2px 5px  rgb(208, 161, 18),
+    -2px -2px 5px rgb(172, 187, 61);
+    color: rgb(13, 13, 13);
+    text-shadow: 2px 2px 5px rgb(226, 211, 167),
+    -2px -2px 5px rgb(207, 213, 158);
+    font-size: 1.6em;
+}
+.main h2:hover{
+    color: rgb(251, 249, 136);
+}
+.main h2::after{
+    content: "⬇️";
+}
+.main h2::before{
+    content: "⬇️";
+}
+.main input, button{
+    font-size: 1.4em;
+}
+.hints div{
+    text-align: center;
+}
+.hints p{
+    display: inline-block;
+    font-size: 1.1em;
+}
+#resetGame{
+    display: none;
+}
+
+/* Main */
