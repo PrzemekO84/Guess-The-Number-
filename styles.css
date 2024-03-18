@@ -1,59 +1,83 @@
 body{
     background-color: rgb(59, 57, 57);
     color: bisque;
+    margin-left: 15px;
+    margin-top: 15px;
 }
 /* Header */
+.startcontainer{
+    width: 30%;
+    float: left;
+}
 .headercontainer h1{
     display: inline-block;
-    padding: 10px 0px;
+    padding: 10px 10px;
     margin-top: auto;
-    border: 2px solid black;
-    border-radius: 5px;
-    background-color: rgb(88, 78, 63);
-    color: rgb(228, 174, 107);
+    border: 3px solid rgb(32, 2, 79);
+    box-shadow: 3px 3px 5px black,
+    -3px -3px 5px rgb(163, 102, 254);
+    border-radius: 8px;
+    background-color: rgb(195, 177, 225);
+    color: rgb(9, 9, 9);
     font-family: Arial, Helvetica, sans-serif;
 }
+.headercontainer h1::before{
+    content: "🔢";
+}
+.headercontainer h1::after{
+    content: "🔢";
+}
 .headercontainer h1:hover{
-    color: rgb(218, 240, 121);
+    color: rgb(241, 239, 195);
 }
 .headercontainer{
-    text-align: center;
+    margin-left: 23px;
+    margin-bottom: -5px;
+    
 }
 /* Header */
 
 /* Rules */
 .rules{
-    border: 4px solid rgb(242, 225, 189);
-    border-radius: 5px;
+    border: 4px solid rgb(9, 9, 9);
+    box-shadow: 3px 3px 5px black,
+    -3px -3px 5px rgb(149, 104, 153);
+    border-radius: 8px;
     display: block;
     padding: 5px 10px;
-    color: rgb(228, 174, 107);
-    background-color: rgb(88, 78, 63);
+    color: rgb(251, 214, 33);
+    background-color: rgb(149, 104, 153);
     float: left;
 }
 .rules h2{
-    font-size: 1.7em;
+    font-size: 1.9em;
     margin-bottom: -5px;
+    margin-top: auto;
+    text-align: center;
 }
 .rules h2::after{
     content: "📝";
 }
 .rules li{
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 .rules li:hover{
-    color: hsl(33, 69%, 86%);
+    color: hsl(15, 89%, 75%);
 }
 /* Rules */
 
 /* Main */
-.main div{
+.maincontainer{
+    display: flex;
+    float: left;
     text-align: center;
+    width: 50%;
+    margin-left: 100px;
+    margin-right: 100px;
 }
-.main h2{
-    display: inline-block;
+.labelcontainer h2{
     border: 3px solid rgb(5, 5, 5);
-    padding: 10px 10px;
+    padding: 15px 60px;
     margin-top: auto;
     background-color: rgb(106, 106, 106);
     box-shadow: 2px 2px 5px  rgb(208, 161, 18),
@@ -63,27 +87,75 @@ body{
     -2px -2px 5px rgb(207, 213, 158);
     font-size: 1.6em;
 }
-.main h2:hover{
+.labelcontainer{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.labelcontainer h2:hover{
     color: rgb(251, 249, 136);
 }
-.main h2::after{
+.labelcontainer h2::after{
     content: "⬇️";
 }
-.main h2::before{
+.labelcontainer h2::before{
     content: "⬇️";
 }
-.main input, button{
+.labelcontainer input, button{
     font-size: 1.4em;
 }
-.hints div{
-    text-align: center;
+#numberOfTries{
+    font-size: 1.2em;
+    text-decoration: underline;
+    color: rgb(247, 6, 6);
 }
-.hints p{
-    display: inline-block;
+#result{
     font-size: 1.1em;
+    color: rgb(255, 0, 157);
+}
+#resetGame{
+    background-color: rgb(255, 0, 157);
+    border: 3px solid black;
+    border-radius: 8px;
+    transition: background-color 0.5s ease;
+}
+#resetGame:hover{
+    background-color: rgb(161, 80, 237);
+}
+/* Main */
+
+/* Hints */
+.hintslayout{
+    display: flex;
+    margin-left: auto;
+    width: 35%;
+}
+.hintscontainer{
+    float: right;
+    white-space: nowrap;
+    border: 3px solid black;
+    background-color: rgb(106, 106, 106);
+    box-shadow: 2px 2px 5px  rgb(208, 161, 18),
+    -2px -2px 5px rgb(172, 187, 61);
+    color: rgb(13, 13, 13);
+    border-radius: 7px;
+    display: none;
+}
+.hintscontainer h3{
+    color: rgb(234, 226, 226);
+    text-shadow: 2px 2px 5px rgb(250, 6, 6),
+    -2px -2px 5px rgb(11, 11, 11);
+    font-size: 1.4em;
+}
+.hintscontainer p{
+    font-size: 1.3em;
+    color: aliceblue;
+    text-shadow: 2px 2px 5px rgb(252, 4, 4),
+    -2px -2px 5px rgb(9, 9, 9);
+}
+.hintscontainer p:hover{
+    color: rgb(255, 0, 157);
 }
 #resetGame{
     display: none;
 }
+/* Hints */
 
-/* Main */

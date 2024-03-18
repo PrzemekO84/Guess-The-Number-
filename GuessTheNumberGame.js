@@ -2,11 +2,11 @@
 let numberInput = document.getElementById("number"); 
 let submit = document.getElementById("submit");
 let result = document.getElementById("result");
-let resetGameLabel = document.getElementById("resetGameLabel");
 let numberOfTries = document.getElementById("numberOfTries");
 let resetGame = document.getElementById("resetGame")
+let hintsContainer = document.querySelector(".hintscontainer")
 let counter = 0;
-let maxAttempts = 5;
+let maxAttempts = 6;
 
 let randomNumber = Math.floor(Math.random() * (100)) + 1;
 console.log(randomNumber);
@@ -15,8 +15,15 @@ console.log(randomNumber);
 function Game(){
     number = numberInput.value;
     number = Number(number);
+
+    if(number < 1 || number > 100) {
+        result.textContent = `Please enter a number between 0 and 100`
+        return; 
+    }
+
     counter++;
     console.log(counter);
+    hintsContainer.style.display = "block";
 
     numberOfTries.textContent = `Tries: ${counter}`
 
@@ -43,48 +50,52 @@ function Hints(){
 
     if(number > randomNumber){
         let higherNumber = number - randomNumber;
-        if(higherNumber > 30){
-            hintNo.textContent = `The number is lower and you are not close!`
+        if(higherNumber >= 30){
+            hintNo.textContent = `Hint ${counter}: The number is lower and you are not close! (${number})`
         }
-        else if(higherNumber <= 20 && higherNumber > 10){
-            hintNo.textContent = `The number is lower and you are close!`
+        else if(higherNumber <= 29 && higherNumber > 16){
+            hintNo.textContent = `Hint ${counter}: The number is lower and you it's getting closer! (${number})`
+        }
+        else if(higherNumber <= 15 && higherNumber >= 8){
+            hintNo.textContent = `Hint ${counter}: The number is lower and you are close! (${number})`
         }
         else{
-            hintNo.textContent = `The number is lower and you are very close!`
+            hintNo.textContent = `Hint ${counter}: The number is lower and it's HOT HOT HOT! (${number})`
         }
     }
     else if(number < randomNumber){
         let lowerNumber = randomNumber - number;
         if(lowerNumber >= 30){
-            hintNo.textContent = `The number is higher and you are not close!`
+            hintNo.textContent = `Hint ${counter}: The number is higher and you are not close! (${number})`
         }
-        else if(lowerNumber <= 20 && lowerNumber > 10){
-            hintNo.textContent = `The number is higher and you are close!`
+        else if(lowerNumber <= 29 && lowerNumber > 16){
+            hintNo.textContent = `Hint ${counter}: The number is higher and you it's getting closer! (${number})`
+        }
+        else if(lowerNumber <= 15 && lowerNumber >= 8){
+            hintNo.textContent = `Hint ${counter}: The number is higher and you are close! (${number})`
         }
         else{
-            hintNo.textContent = `The number is higher and you are very close!`
+            hintNo.textContent = `Hint ${counter}: The number is higher and it's HOT HOT HOT! (${number})`
         }
     }
 }
 
 function ResetGame(){
-    resetGameLabel.textContent = `Play again!`;
+    // reseting whole data
+    randomNumber = Math.floor(Math.random() * (100)) + 1;
+    console.log(randomNumber);
+    counter = 0;
     result.textContent = "";
     numberOfTries.textContent = "";
     submit.disabled = false;
+    resetGame.style.display = "none";
+    hintsContainer.style.display = "none";
 
-    for(let i = 1; i <= 4; i++){
+    for(let i = 1; i <= maxAttempts - 1; i++){
         let hintNo = document.getElementById(`hintNo${i}`);
         hintNo.textContent = "";
-    }
-
-    resetGame.onclick = function(){
-        randomNumber = Math.floor(Math.random() * (100)) + 1;
-        console.log(randomNumber);
-        counter = 0;
     }  
 }
-
 
 submit.onclick = Game;
 

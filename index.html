@@ -8,47 +8,48 @@
     <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTabIIVAxG96e1sS9DtQ2jWFbzF9LWbkB58xS8gYsm2hA&s">
 </head>
 <body>
-    <header>
-        <div class="headercontainer">
-            <h1>Guess The Number Game</h1>
-        </div>
-    </header>
+    <div class="startcontainer">
+        <header>
+            <div class="headercontainer">
+                <h1>Guess The Number Game</h1>
+            </div>
+        </header>
     
-    <section class="rules">
-        <h2>Game Rules</h2>
-        <ul>
-            <li>Try to guess the number from 1 to 100</li>
-            <li>After every try you will get a little hint about the secret number</li>
-            <li>Type the number then submit the answer</li>
-            <li>Have Fun!</li>
-        </ul>
-    </section>
+        <section class="rules">
+            <h2>Game Rules</h2>
+            <ul>
+                <li>Try to guess the number from 1 to 100</li>
+                <li>You will have 6 chances to guess the secert number</li>
+                <li>After every try you will get a little hint about the secret number</li>
+                <li>Type the number then submit the answer</li>
+                <li>Have Fun!</li>
+            </ul>
+        </section>
+    </div>
 
-    <main class="main">
+    <main>
         <div class="maincontainer">
-            <h2>Please enter a number!</h2>
-        </div>
-
-        <div>
-            <input id="number" type="number">
-            <button id="submit" type="submit">Submit</button>
-        </div>
-
+            <div class="labelcontainer">
+                <h2>Please enter a number!</h2>
+                <input id="number" type="number" value="1" min="1" max="100">
+                <button id="submit" type="submit" >Submit</button>
+                <p id="numberOfTries"></p>
+                <p id="result"></p>
+                <button id="resetGame">Restart Game!</button>
+            </div>
         
-        <div class="hints">
-            <p id="hintNo1"></p>
-            <p id="hintNo2"></p>
-            <p id="hintNo3"></p>
-            <p id="hintNo4"></p>
+            <!-- Hints Layout -->
+            <div class="hintslayout" >
+                <div class="hintscontainer" id="hintsContainer">
+                    <h3>Hints:</h3>
+                    <p id="hintNo1"></p>
+                    <p id="hintNo2"></p>
+                    <p id="hintNo3"></p>
+                    <p id="hintNo4"></p>
+                    <p id="hintNo5"></p>
+                </div>
+            </div>
         </div>
-
-        <p id="numberOfTries"></p>
-
-        <p id="result"></p>
-
-        <label id="resetGameLabel" for="resetGame"></label>
-        <button id="resetGame">Restart Game!</button>
-        
     </main>
     
     
